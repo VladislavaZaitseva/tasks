@@ -5,5 +5,5 @@
 const a = prompt();
 
 if (isNaN(a)) {
-    console.log(a.length);
+    console.log(`ваше слово ${a.length}`);
 }
