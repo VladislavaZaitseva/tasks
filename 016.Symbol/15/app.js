@@ -3,10 +3,10 @@
 
 const str = prompt('');
 
-let resoult = 
+let result = '';
 
 for (let i = 0; i < str.length; i++) {
-    str[i] === 'u' || str[i] === 'a'{
-        resoult += str[i]
+   if (str[i] === 'u' || str[i] === 'a'){
+        result += str[i]
     }
 }
