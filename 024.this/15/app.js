@@ -10,5 +10,4 @@ function rec(num_) {
 }
 
 const res = rec(num);
-console.log(typeof res);
 console.log(res);
