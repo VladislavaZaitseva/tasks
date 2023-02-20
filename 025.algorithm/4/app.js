@@ -6,8 +6,9 @@
 // 10 -> 55
 // 7 -> 13
 
-const num = prompt();
+const num = 10;
 
 function factorial(n){
     
 }
+
