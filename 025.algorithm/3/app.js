@@ -3,8 +3,14 @@
 const num = [1, 2, 3.4, 5, 7.8];
 
 function factorial(num_) {
-    if (num_.isInteger) return 1
+    let newNum = [];
 
+    for (let i = 0; i < num_.length; i++) {
+        if (Number.isInteger(num_[i])) {
+            newNum.push(arr_[i])
+        }
+    }
 }
 
-factorial(num)
+const res = factorial(num);
+console.log(res);
