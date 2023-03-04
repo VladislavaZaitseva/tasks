@@ -4,3 +4,22 @@
 // значений, где строка массива arr включают значение переменной javascript.
 // Проверка на ввод только текстовых значений на заполнение массива. forEach
 
+const n = 5;
+const JS = 'javascript';
+let arr = [];
+
+for (let i = 0; i < n; i++) {
+    let pro = prompt();
+    if (isNaN(pro)) {
+        arr.push(pro);
+    }
+}
+
+let newArr = [];
+
+arr.forEach(function (el) {
+    if (el.includes(JS)) {
+        newArr.push(el);
+    }
+})
+console.log(newArr);
