@@ -15,19 +15,19 @@ const arr = [
 ];
 
 function getAllEnvironment() {
-    if(arr.length) {throw new Error ('empty')}
+    if (arr.length) { throw new Error('empty') }
     return arr;
 }
 
 function getEnvironmentById(id) {
     const filt = arr.filter((el) => el.id == id);
-    if(arr.length) {throw new Error ('empty')}
+    if (arr.length) { throw new Error('empty') }
     return filt
 };
 
 function createEnvironment(label, category, priority) {
     const filtered = arr.filter(el => el.label == label)
-    if(filtered.length > 0) {throw new Error ('This label already exist')}
+    if (filtered.length > 0) { throw new Error('This label already exist') }
     const obj = {
         id: arr.length + 1,
         label: label,
@@ -38,9 +38,9 @@ function createEnvironment(label, category, priority) {
     return arr;
 };
 
-function updataEnvironment(id, label, category, priority){
-    const filtered = arr.filter(el =>el.id != id);
-    if (filtered.length == arr.length) {throw new Error ('id not found')};
+function updataEnvironment(id, label, category, priority) {
+    const filtered = arr.filter(el => el.id != id);
+    if (filtered.length == arr.length) { throw new Error('id not found') };
     const newObj = {
         id: id,
         label: label,
@@ -52,15 +52,16 @@ function updataEnvironment(id, label, category, priority){
     return filtered;
 };
 
-function deleteEnvironment(id){
-    const filtered = arr.filter(el => el.id !=id)
-    if(filtered.length == arr.length) {throw new Error('This ID not found')}
+function deleteEnvironment(id) {
+    const filtered = arr.filter(el => el.id != id)
+    if (filtered.length == arr.length) { throw new Error('This ID not found') }
     return filtered
 };
 
-module.exports = { getAllEnvironment, 
-    getEnvironmentById, 
+module.exports = {
+    getAllEnvironment,
+    getEnvironmentById,
     createEnvironment,
     updataEnvironment,
     deleteEnvironment
- }
+}

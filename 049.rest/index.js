@@ -5,18 +5,18 @@ const {
     createEnvironment,
     updataEnvironment,
     deleteEnvironment
-} = require('./service')
+} = require('./service');
 
-const bodyParser = require('body-parser')
-const app = express()
-app.use(bodyParser.json())
+const bodyParser = require('body-parser');
+const app = express();
+app.use(bodyParser.json());
 
 app.get('/', (request, response) => {
     try {
         const data = getAllEnvironment();
-        response.send(data)
+        response.status(200).send(data)
     } catch (error) {
-        response.send(error.message)
+        response.status(404).send(error.message)
     }
 });
 
@@ -31,32 +31,32 @@ app.get('/:id', (request, response) => {
 });
 
 app.post('/', (request, response) => {
-    try{
+    try {
         const { label, category, priority } = request.body;
         const data = createEnvironment(label, category, priority);
-        response.status(200).send(data)
-    }catch (error) {
-        response.status(201).send(error.message)
+        response.status(201).send(data)
+    } catch (error) {
+        response.status(405).send(error.message)
     }
 });
 
 app.put('/:id', (request, response) => {
-    try{
+    try {
         const { id } = request.params
         const { label, category, priority } = request.body;
         const data = updataEnvironment(id, label, category, priority)
         response.status(200).send(data)
-    }catch (error) {
-        response.status(400).send(error.message)
+    } catch (error) {
+        response.status(404).send(error.message)
     }
 });
 
 app.delete('/:id', (request, response) => {
-    try{
+    try {
         const { id } = request.params;
         const data = deleteEnvironment(id);
         response.status(200).send(data)
-    }catch (error) {
+    } catch (error) {
         response.status(404).send(error.message)
     }
 });
